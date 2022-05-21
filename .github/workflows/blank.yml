@@ -1,0 +1,20 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  repository_dispatch:
+    types: [dist_built]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo This is project B!
+      - name: Run a multi-line script
+        run: |
+          echo Project A triggered build,
+          echo test, and deploy your project.
